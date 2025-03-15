@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\buingocluan_buoi4.props" />
+</Project>

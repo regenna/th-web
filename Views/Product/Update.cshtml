@@ -1,0 +1,105 @@
+﻿@model buingocluan_buoi4.Models.Product
+@using Microsoft.AspNetCore.Mvc.Rendering
+
+@{
+    ViewData["Title"] = "Chỉnh sửa sản phẩm";
+}
+
+<div class="container mt-5">
+    <!-- Tiêu đề -->
+    <h2 class="text-center text-primary fw-bold">
+        <i class="fa-solid fa-pen"></i> Chỉnh sửa sản phẩm
+    </h2>
+
+    <form asp-action="Update" method="post" enctype="multipart/form-data" class="mt-4 shadow p-4 rounded bg-light">
+        <input type="hidden" asp-for="Id" />
+
+        <!-- Tên sản phẩm -->
+        <div class="form-group mb-3">
+            <label asp-for="Name" class="form-label fw-bold">Tên sản phẩm</label>
+            <input asp-for="Name" class="form-control" placeholder="Nhập tên sản phẩm" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <!-- Giá sản phẩm -->
+        <div class="form-group mb-3">
+            <label asp-for="Price" class="form-label fw-bold">Giá sản phẩm</label>
+            <input asp-for="Price" type="number" class="form-control" placeholder="Nhập giá sản phẩm" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+
+        <!-- Mô tả sản phẩm -->
+        <div class="form-group mb-3">
+            <label asp-for="Description" class="form-label fw-bold">Mô tả</label>
+            <textarea asp-for="Description" class="form-control" rows="3" placeholder="Nhập mô tả sản phẩm"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <!-- Danh mục -->
+        <div class="form-group mb-3">
+            <label asp-for="CategoryId" class="form-label fw-bold">Danh mục</label>
+            <select asp-for="CategoryId" asp-items="@ViewBag.Categories" class="form-control">
+                <option value="">Chọn danh mục</option>
+            </select>
+            <span asp-validation-for="CategoryId" class="text-danger"></span>
+        </div>
+
+        <!-- Hình ảnh sản phẩm -->
+        <div class="form-group mb-3">
+            <label asp-for="ImageUrl" class="form-label fw-bold">Hình ảnh sản phẩm</label>
+            <input type="file" asp-for="ImageUrl" class="form-control" id="imageInput" />
+            <div class="mt-3 text-center">
+                <img src="@Model.ImageUrl" alt="Product Image" id="previewImage" class="img-thumbnail shadow-sm" style="max-width: 200px;" />
+            </div>
+        </div>
+
+        <!-- Nút Lưu -->
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary px-5 py-2 fw-bold">
+                <i class="fa-solid fa-save"></i> Lưu thay đổi
+            </button>
+        </div>
+    </form>
+</div>
+
+<!-- CSS Tùy chỉnh -->
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    .form-control:focus {
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+        transform: translateY(-2px);
+    }
+
+    .img-thumbnail {
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+
+        .img-thumbnail:hover {
+            transform: scale(1.1);
+        }
+</style>
+
+<!-- JavaScript Preview Hình ảnh -->
+<script>
+    document.querySelector('#imageInput').addEventListener('change', function (event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = document.getElementById("previewImage");
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+</script>
