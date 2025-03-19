@@ -12,7 +12,7 @@ using buingocluan_buoi4.Models;
 namespace buingocluan_buoi4.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250315065722_ExtendIdentityUser")]
+    [Migration("20250319083813_ExtendIdentityUser")]
     partial class ExtendIdentityUser
     {
         /// <inheritdoc />

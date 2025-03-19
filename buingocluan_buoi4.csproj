@@ -20,6 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Admin\controllers\" />
+    <Folder Include="Areas\Admin\views\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
 

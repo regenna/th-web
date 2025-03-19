@@ -8497,11 +8497,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\chuongtrinhhoc\\html_css_js\\buingocluan_buoi4\\buingocluan_buoi4.csproj",
+      "projectUniqueName": "D:\\chuongtrinhhoc\\thlt_web\\2280601844_BuiNgocLuan_bai4\\th-web\\buingocluan_buoi4.csproj",
       "projectName": "buingocluan_buoi4",
-      "projectPath": "D:\\chuongtrinhhoc\\html_css_js\\buingocluan_buoi4\\buingocluan_buoi4.csproj",
+      "projectPath": "D:\\chuongtrinhhoc\\thlt_web\\2280601844_BuiNgocLuan_bai4\\th-web\\buingocluan_buoi4.csproj",
       "packagesPath": "C:\\Users\\ngocl\\.nuget\\packages\\",
-      "outputPath": "D:\\chuongtrinhhoc\\html_css_js\\buingocluan_buoi4\\obj\\",
+      "outputPath": "D:\\chuongtrinhhoc\\thlt_web\\2280601844_BuiNgocLuan_bai4\\th-web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
