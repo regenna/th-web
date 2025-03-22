@@ -1,0 +1,43 @@
+﻿@model List<buingocluan_buoi4.Models.Order>
+
+@{
+    ViewData["Title"] = "Danh sách đơn hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">📋 Danh Sách Đơn Hàng</h2>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover shadow-sm">
+            <thead class="table-primary text-center">
+                <tr>
+                    <th>ID Order</th>
+                    <th>Khách hàng</th>
+                    <th>Email</th>
+                    <th>Ngày đặt</th>
+                    <th>Tổng tiền</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in Model)
+                {
+                    <tr>
+                        <td class="text-center">@order.Id</td>
+                        <td>@order.ApplicationUser.FullName</td>
+                        <td>@order.ApplicationUser.Email</td>
+                        <td class="text-center">@order.OrderDate.ToString("dd/MM/yyyy")</td>
+                        <td class="text-end fw-bold">@order.TotalPrice</td>
+                        <td class="text-center">
+                            <a asp-area="Admin" asp-controller="Order" asp-action="Detail"
+                               asp-route-id="@order.Id" class="btn btn-sm btn-info text-white">
+                                📜 Xem Chi Tiết
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

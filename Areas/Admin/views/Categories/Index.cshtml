@@ -1,0 +1,46 @@
+﻿@model IEnumerable<buingocluan_buoi4.Models.Category>
+
+@{
+    ViewData["Title"] = "Danh sách danh mục";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<a asp-action="Add" class="btn btn-primary mb-3">Thêm danh mục mới</a>
+<br />
+<a asp-area="Admin" asp-controller="Product" asp-action="Index" class="btn btn-primary">
+    <i class="bi bi-box-arrow-left"></i> Danh sách sản phẩm
+</a>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Tên danh mục</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var category in Model)
+            {
+                <tr>
+                    <td>@category.Id</td>
+                    <td>@category.Name</td>
+                    <td>
+                        <a asp-action="Display" asp-route-id="@category.Id" class="btn btn-info btn-sm">Xem</a>
+                        <a asp-action="Update" asp-route-id="@category.Id" class="btn btn-warning btn-sm">Chỉnh sửa</a>
+                        <a asp-action="Delete" asp-route-id="@category.Id" class="btn btn-danger btn-sm">Xóa</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="3" class="text-center">Không có danh mục nào.</td>
+            </tr>
+        }
+    </tbody>
+</table>

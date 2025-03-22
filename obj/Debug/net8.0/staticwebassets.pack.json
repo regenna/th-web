@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\buingocluan_buoi4.32x8q3710c.bundle.scp.css"
     },
     {
+      "Id": "D:\\chuongtrinhhoc\\thlt_web\\2280601844_BuiNgocLuan_bai4\\th-web\\wwwroot\\css\\admin.css",
+      "PackagePath": "staticwebassets\\css\\admin.css"
+    },
+    {
       "Id": "D:\\chuongtrinhhoc\\thlt_web\\2280601844_BuiNgocLuan_bai4\\th-web\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -13,12 +17,24 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\chuongtrinhhoc\\thlt_web\\2280601844_BuiNgocLuan_bai4\\th-web\\wwwroot\\images\\1.jpg",
+      "PackagePath": "staticwebassets\\images\\1.jpg"
+    },
+    {
       "Id": "D:\\chuongtrinhhoc\\thlt_web\\2280601844_BuiNgocLuan_bai4\\th-web\\wwwroot\\images\\2.jpg",
       "PackagePath": "staticwebassets\\images\\2.jpg"
     },
     {
+      "Id": "D:\\chuongtrinhhoc\\thlt_web\\2280601844_BuiNgocLuan_bai4\\th-web\\wwwroot\\images\\2.png",
+      "PackagePath": "staticwebassets\\images\\2.png"
+    },
+    {
       "Id": "D:\\chuongtrinhhoc\\thlt_web\\2280601844_BuiNgocLuan_bai4\\th-web\\wwwroot\\images\\3.jpg",
       "PackagePath": "staticwebassets\\images\\3.jpg"
+    },
+    {
+      "Id": "D:\\chuongtrinhhoc\\thlt_web\\2280601844_BuiNgocLuan_bai4\\th-web\\wwwroot\\images\\4.jpg",
+      "PackagePath": "staticwebassets\\images\\4.jpg"
     },
     {
       "Id": "D:\\chuongtrinhhoc\\thlt_web\\2280601844_BuiNgocLuan_bai4\\th-web\\wwwroot\\images\\5.jpg",

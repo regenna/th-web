@@ -1,0 +1,81 @@
+/* Start Admin Theme */
+:root {
+    --primary: #4e73df;
+    --secondary: #858796;
+    --success: #1cc88a;
+    --info: #36b9cc;
+    --warning: #f6c23e;
+    --danger: #e74a3b;
+    --light: #f8f9fc;
+    --dark: #5a5c69;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 14rem !important;
+    min-height: 100vh;
+}
+
+.sidebar .nav-item .nav-link {
+    padding: 0.75rem 1rem;
+    width: 14rem;
+}
+
+.sidebar .nav-item .nav-link i {
+    margin-right: 0.25rem;
+}
+
+.sidebar-dark .nav-item .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.sidebar-dark .nav-item .nav-link:hover {
+    color: #fff;
+}
+
+.sidebar-dark .sidebar-heading {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.bg-gradient-primary {
+    background-color: #4e73df;
+    background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+    background-size: cover;
+}
+
+/* Content */
+#content-wrapper {
+    background-color: #f8f9fc;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Cards */
+.card-header {
+    background-color: #f8f9fc;
+    border-bottom: 1px solid #e3e6f0;
+}
+
+.card {
+    margin-bottom: 24px;
+    border: none;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+/* Custom Form Styles */
+.custom-file-label::after {
+    content: "Chọn";
+}
+
+/* Tables */
+.table-hover tbody tr:hover {
+    background-color: rgba(78, 115, 223, 0.05);
+}
+
+/* Footer */
+.sticky-footer {
+    padding: 1rem 0;
+    flex-shrink: 0;
+}
+
+/* Admin Theme End */
