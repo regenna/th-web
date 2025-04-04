@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\th-web",
+    "\\th-web\\Areas",
+    "\\th-web\\Areas\\Admin",
+    "\\th-web\\Areas\\Admin\\views",
+    "\\th-web\\Areas\\Admin\\views\\Product",
+    "\\th-web\\Areas\\Identity",
+    "\\th-web\\Areas\\Identity\\Pages",
+    "\\th-web\\Areas\\Identity\\Pages\\Account",
+    "\\th-web\\Controllers"
+  ],
+  "SelectedNode": "\\th-web\\Program.cs",
+  "PreviewInSolutionExplorer": false
+}

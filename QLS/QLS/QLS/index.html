@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Quản Lý Sách</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+		rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+		integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+	<link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+	<!-- Header -->
+	<header class="app-header">
+		<div class="container">
+			<div class="header-content">
+				<h1><i class="fas fa-book-open"></i> Quản Lý Sách</h1>
+				<p>Hệ thống quản lý sách hiện đại</p>
+			</div>
+		</div>
+	</header>
+
+	<div class="container main-container">
+		<!-- Form Section -->
+		<div class="card form-card">
+			<div class="card-header">
+				<h2 class="card-title"><i class="fas fa-edit"></i> Thông tin sách</h2>
+			</div>
+			<div class="card-body">
+				<form id="studentForm">
+					<div class="row">
+						<!-- Tên -->
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="bookName" class="form-label">Tên sách</label>
+								<div class="input-group">
+									<span class="input-group-text"><i class="fas fa-book"></i></span>
+									<input type="text" autocomplete="off" class="form-control" id="bookName"
+										placeholder="Eg. Conan" />
+								</div>
+								<div id="form-message" class="message-error"></div>
+							</div>
+						</div>
+						<!-- Giá -->
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="price" class="form-label">Giá</label>
+								<div class="input-group">
+									<span class="input-group-text"><i class="fas fa-tags"></i></span>
+									<input type="text" autocomplete="off" class="form-control" id="price"
+										placeholder="Eg. 1000" />
+								</div>
+								<div id="form-message" class="message-error"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row mt-3">
+						<!-- Mô tả -->
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="description" class="form-label">Mô tả</label>
+								<div class="input-group">
+									<span class="input-group-text"><i class="fas fa-info-circle"></i></span>
+									<textarea class="form-control" id="description" rows="3"
+										placeholder="Eg. Sách quá hay!"></textarea>
+								</div>
+								<div id="form-message" class="message-error"></div>
+							</div>
+						</div>
+					</div>
+					<!-- Chức năng -->
+					<div class="action-buttons mt-4">
+						<div class="primary-actions">
+							<button type="button" class="btn btn-primary" id="btnAdd">
+								<i class="fa-solid fa-plus mr-item"></i>Thêm Sản Phẩm
+							</button>
+							<button class="btn btn-warning text-white" id="btnUpdate">
+								<i class="fa-solid fa-pen-to-square mr-item"></i>Cập nhật
+							</button>
+						</div>
+						<div class="secondary-actions">
+							<button class="btn btn-danger" style="display: none" id="btnClear">
+								<i class="fa-solid fa-trash mr-item"></i>Xoá
+							</button>
+							<button class="btn btn-light" id="btnReset">
+								<i class="fa-solid fa-arrows-rotate mr-item"></i>Reset
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- Table Section -->
+		<div class="card table-card mt-4">
+			<div class="card-header">
+				<h2 class="card-title"><i class="fas fa-list"></i> Danh sách sách</h2>
+			</div>
+			<div class="card-body">
+				<div class="table-responsive">
+					<table id="tblStudent" class="table table-hover">
+						<thead>
+							<tr class="table-header">
+								<th>ID</th>
+								<th>Tên sách</th>
+								<th>Giá</th>
+								<th>Mô tả</th>
+								<th>Thao tác</th>
+							</tr>
+						</thead>
+						<tbody id="productList"></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal View Detail Book Info-->
+	<div class="modal fade" id="modalViewDetailInfo" tabindex="-1" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">
+						<i class="fas fa-book-open"></i> Thông tin chi tiết sách
+					</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body table-detail">
+					<div class="row">
+						<div class="col-12 text-center">
+							<div class="avatar-detail">
+								<img src="./image/default-thumbnail.jpg" class="avatar" data-atr="avatar" />
+							</div>
+							<h2 class="mt-3 book-title" data-atr="bookname">Conan</h2>
+							<div class="book-price mt-2" id="book-price">
+								<span class="price-tag">100,000 VNĐ</span>
+							</div>
+						</div>
+						<div class="container mt-4">
+							<div class="book-details">
+								<div class="detail-item">
+									<span class="detail-label">Mã sách:</span>
+									<span class="detail-value code" data-atr="id">1</span>
+								</div>
+								<div class="detail-item">
+									<span class="detail-label">Tên sách:</span>
+									<span class="detail-value dateOfBirth" data-atr="bookname">Conan</span>
+								</div>
+								<div class="detail-item">
+									<span class="detail-label">Mô tả:</span>
+									<span class="detail-value gender" data-atr="description">Sách hay quá!</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+						Đóng
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer class="app-footer mt-5">
+		<div class="container">
+			<p>© 2023 Hệ Thống Quản Lý Sách</p>
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+		integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+		integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+		crossorigin="anonymous"></script>
+	<!-- Sweet-alert -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.6.5/sweetalert2.min.js"
+		integrity="sha512-m5UMBsLgNwgf9KFah01eB3cGlhkP9ucYYavGAux0KtxDSl/chjvNxaMkW5zBKSbQtmgQggOtqfiBe5bQr9n5YQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<!-- My script -->
+	<script type="module" src="./js/main.js"></script>
+</body>
+
+</html>

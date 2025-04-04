@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\BuiNgocLuan_restful_API.props" />
+</Project>
